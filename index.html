@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Dahls bageri | Butik</title>
+    <title>BRÖD</title>
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -11,19 +11,31 @@
       crossorigin="anonymous"
     />
     <link href="styles.css" rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
+    <script defer src="script.js"></script>
   </head>
   <body>
     <header>
       <nav
-        class="navbar navbar-expand-lg bg-dark border-bottom border-body"
+        id="navbar"
+        class="navbar navbar-expand-lg border-body"
         data-bs-theme="dark"
       >
-        <div class="container fluid">
+        <div class="container-xl">
           <a class="navbar-brand" href="index.html"
             ><img
-              src="images/dahls_logo-1.svg"
+              src="images/brod-white.svg"
               alt="logga"
-              width="50"
+              width="70px"
               height="auto"
           /></a>
           <button
@@ -40,124 +52,91 @@
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
               <li class="nav-item">
-                <a class="nav-link" href="om-oss.html">Butik</a>
+                <a class="nav-link" href="butik.html">Butik</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Om oss</a>
+                <a class="nav-link" href="om-oss.html">Om oss</a>
               </li>
             </ul>
+            <button type="button" class="btn btn-primary">
+              <i class="bi bi-cart"></i><strong> 10</strong>
+            </button>
           </div>
         </div>
       </nav>
+      <div
+        class="pt-5 text-center bg-image"
+        style="
+          background-image: url('/images/carousel3-dark.jpg');
+          height: 400px;
+          background-size: cover;
+        "
+      >
+        <h1 class="mb-5 text-white display-1">VI ÄR <mark>BRÖD</mark></h1>
+        <p class="mb-4 text-white lead">Vi bakar, du njuter</p>
+        <a data-mdb-ripple-init class="btn btn-primary" href="" role="button"
+          >Handla</a
+        >
+      </div>
     </header>
-    <div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
-      <div class="carousel-inner">
-        <div class="carousel-item active">
-          <img class="d-block w-100" src="images/carousel1.jpg" alt="..." />
-          <div class="container">
-            <div class="carousel-caption">
-              <h1>Välkommen till Dals butik på nätet!</h1>
-              <p>Här kan du köpa bullar och annat gott.</p>
-            </div>
-          </div>
-        </div>
-        <div class="carousel-item">
-          <img class="d-block w-100" src="images/carousel2.jpg" alt="..." />
-          <div class="carousel-caption d-none d-md-block bg-dark">
-            <h5>Välkommen till Dals butik på nätet!</h5>
-            <p>Här kan du köpa bullar och annat gott.</p>
-          </div>
-        </div>
-        <div class="carousel-item">
-          <img class="d-block w-100" src="images/carousel3.jpg" alt="..." />
-          <div class="carousel-caption d-none d-md-block bg-dark">
-            <h5>Välkommen till Dals butik på nätet!</h5>
-            <p>Här kan du köpa bullar och annat gott.</p>
-          </div>
-        </div>
-      </div>
-      <button
-        class="carousel-control-prev"
-        type="button"
-        data-bs-target="#carouselExample"
-        data-bs-slide="prev"
-      >
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Previous</span>
-      </button>
-      <button
-        class="carousel-control-next"
-        type="button"
-        data-bs-target="#carouselExample"
-        data-bs-slide="next"
-      >
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Next</span>
-      </button>
-    </div>
-    <div class="mb-5"></div>
-
-    <div class="container">
-      <div class="row">
-        <div class="col-sm-12 mb-sm-0">
-          <div class="card">
-            <div class="card-body">
-              <h5 class="card-title">Handla online</h5>
-              <p class="card-text">
-                Köp alla dina bakverk direkt via nätet. Just nu fri hemleverans
-                på beställningar över 299 kr.
-              </p>
-              <a href="#" class="btn btn-primary">Onlinebutik</a>
+    <main>
+      <div class="mb-5"></div>
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-12 mb-sm-0">
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title">Handla online</h5>
+                <p class="card-text">
+                  Köp alla dina bakverk direkt via nätet. Just nu fri
+                  hemleverans på beställningar över 299 kr.
+                </p>
+                <a href="#" class="btn btn-primary">Onlinebutik</a>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-    <div class="mb-5"></div>
-    <div class="container">
-      <div class="row align-items-center">
-        <div class="col-md-7">
-          <h1 class="display-2">Vi kan bröd</h1>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero,
-            quia ipsum reiciendis itaque facere dignissimos deserunt, eos
-            tempore, molestias magnam ducimus iusto ipsam eum assumenda. Aut
-            illum optio magnam corporis.
-          </p>
-          <button type="button" class="btn btn-primary">Handla nu</button>
-        </div>
-        <div class="col-md-5">
-          <img src="images/download.svg" />
-        </div>
-        <div class="col-md-7 order-md-2">
-          <h1 class="display-2">Om oss</h1>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui ut
-            doloremque dolorem exercitationem eius nulla velit inventore
-            perspiciatis, voluptatum minima. Odit quisquam, magnam pariatur nemo
-            similique quibusdam non laudantium eum?
-          </p>
-          <button type="button" class="btn btn-primary">Läs mer</button>
-        </div>
-        <div class="col-md-5 order-md-1">
-          <img src="images/download.svg" />
-        </div>
-      </div>
-    </div>
-    <footer>
+      <div class="mb-5"></div>
       <div class="container">
         <div class="row align-items-center">
-          <div class="col">
-            <p>Anders</p>
+          <div class="col-md-7">
+            <h3 class="display-3">Vi kan bröd</h3>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero,
+              quia ipsum reiciendis itaque facere dignissimos deserunt, eos
+              tempore, molestias magnam ducimus iusto ipsam eum assumenda. Aut
+              illum optio magnam corporis.
+            </p>
+            <button type="button" class="btn btn-primary">Handla nu</button>
+          </div>
+          <div class="col-md-5">
+            <img src="images/boximg1.jpg" />
+          </div>
+          <div class="col-md-7 order-md-2">
+            <h3 class="display-3">Om oss</h3>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui ut
+              doloremque dolorem exercitationem eius nulla velit inventore
+              perspiciatis, voluptatum minima. Odit quisquam, magnam pariatur
+              nemo similique quibusdam non laudantium eum?
+            </p>
+            <button type="button" class="btn btn-primary">Läs mer</button>
+          </div>
+          <div class="col-md-5 order-md-1">
+            <img src="images/boximg2.jpg" />
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer>
+      <div class="container-fluid fixed-bottom bg-dark">
+        <div class="row">
+          <div class="col align-items-center">
+            <p class="text-white">Anders 2024</p>
           </div>
         </div>
       </div>
     </footer>
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
-      crossorigin="anonymous"
-    ></script>
-    <script src="script.js"></script>
   </body>
 </html>

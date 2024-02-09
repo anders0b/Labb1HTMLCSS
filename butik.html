@@ -52,10 +52,10 @@
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
               <li class="nav-item">
-                <a class="nav-link" href="butik.html">Butik</a>
+                <a class="nav-link active" href="butik.html">Butik</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link active" href="om-oss.html">Om oss</a>
+                <a class="nav-link" href="om-oss.html">Om oss</a>
               </li>
             </ul>
             <button type="button" class="btn btn-primary">
@@ -67,25 +67,68 @@
       <div
         class="p-5 text-center bg-image"
         style="
-          background-image: url('/images/carousel1-dark.jpg');
-          height: 400px;
+          background-image: url('/images/carousel2-dark.jpg');
+          height: 300px;
           background-size: cover;
         "
       >
-        <h1 class="mb-5 text-white display-1">VI ÄR <mark>BRÖD</mark></h1>
-        <p class="mb-4 text-white lead">Vi bakar, du njuter</p>
-        <a data-mdb-ripple-init class="btn btn-primary" href="" role="button"
-          >Handla</a
-        >
+        <h1 class="mb-5 text-white display-1">HANDLA HOS <mark>BRÖD</mark></h1>
+        <p class="mb-4 text-white lead">
+          Vi säkerställer att vårt bröd är nybakat och färskt.
+        </p>
       </div>
     </header>
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
-      crossorigin="anonymous"
-    ></script>
+    <main>
+      <div class="container-xl mt-3"></div>
+      <div class="container">
+        <div id="inventory" class="row row-cols-1 row-cols-md-3">
+          <div class="col">
+            <div class="card align-items-center">
+              <img
+                src="/images/boximg1.jpg"
+                style="width: 200px; height: auto"
+                class="card-img-top"
+                alt="..."
+              />
+              <div class="card-body">
+                <h5 class="card-title">Kardemummabulle</h5>
+                <p class="lead">40 kr</p>
+                <p class="card-text">En mumsig bulle med smak av kardemumma.</p>
+                <button type="button" class="btn btn-primary">
+                  Lägg i kundvagn
+                </button>
+                <button type="button" class="btn btn-secondary">Läs mer</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="mb-5"></div>
+      <div class="container-flex bg-secondary mt-5">
+        <div class="container">
+          <div class="row align-items-center">
+            <div class="col-md-7 order-md-2">
+              <h3 class="display-3">Om oss</h3>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui ut
+                doloremque dolorem exercitationem eius nulla velit inventore
+                perspiciatis, voluptatum minima. Odit quisquam, magnam pariatur
+                nemo similique quibusdam non laudantium eum?
+              </p>
+              <button type="button" class="btn btn-primary">Läs mer</button>
+            </div>
+            <div class="col-md-5 order-md-1">
+              <img
+                src="images/carousel3.jpg"
+                style="width: 300px; background-size: cover"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
     <footer>
-      <div class="container-fluid fixed-bottom bg-dark">
+      <div class="container-fluid bg-dark">
         <div class="row">
           <div class="col align-items-center">
             <p class="text-white">Anders 2024</p>
