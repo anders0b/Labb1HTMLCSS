@@ -38,6 +38,9 @@
               width="70px"
               height="auto"
           /></a>
+          <button class="btn btn-primary d-flex d-lg-none">
+            <i class="bi bi-cart"></i><strong> 10</strong>
+          </button>
           <button
             class="navbar-toggler"
             type="button"
@@ -58,9 +61,13 @@
                 <a class="nav-link" href="om-oss.html">Om oss</a>
               </li>
             </ul>
-            <button type="button" class="btn btn-primary">
-              <i class="bi bi-cart"></i><strong> 10</strong>
-            </button>
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+              <li class="nav-item ms-auto float-start">
+                <button class="btn btn-primary d-none d-lg-block">
+                  <i class="bi bi-cart"></i><strong> 10</strong>
+                </button>
+              </li>
+            </ul>
           </div>
         </div>
       </nav>
@@ -72,7 +79,8 @@
           background-size: cover;
         "
       >
-        <h1 class="mb-5 text-white display-1">VI ÄR <mark>BRÖD</mark></h1>
+        <img src="images/brod-white.svg" style="width: 400px" />
+        <!---<h1 class="mb-5 text-white display-1">vi är <mark>BRÖD</mark></h1> --->
         <p class="mb-4 text-white lead">Vi bakar, du njuter</p>
         <a data-mdb-ripple-init class="btn btn-primary" href="" role="button"
           >Handla</a
@@ -129,11 +137,23 @@
         </div>
       </div>
     </main>
-    <footer>
-      <div class="container-fluid fixed-bottom bg-dark">
+    <footer class="bg-dark">
+      <div class="container-xl">
         <div class="row">
-          <div class="col align-items-center">
-            <p class="text-white">Anders 2024</p>
+          <div class="col-sm mb-5 mt-5 align-self-center">
+            <img src="/images/brod-white.svg" style="width: 200px" />
+          </div>
+          <div class="col-sm mb-5 mt-5 align-self-center">
+            <h4 class="text-white">Länkar</h4>
+            <div class="list-group-dark list-group-flush text-white">
+              <a href="#" class="list-group-item">Hem</a>
+              <a href="#" class="list-group-item">Butik</a>
+              <a href="#" class="list-group-item">Om oss</a>
+            </div>
+          </div>
+          <div class="col-sm mb-5 mt-5 align-self-center">
+            <h4 class="text-white">BRÖD AB</h4>
+            <p class="text-white">Anders Öberg<br />Testvägen 13</p>
           </div>
         </div>
       </div>
