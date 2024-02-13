@@ -38,9 +38,10 @@
               width="70px"
               height="auto"
           /></a>
-          <button class="btn btn-primary d-flex d-lg-none">
-            <i class="bi bi-cart"></i><strong> 10</strong>
-          </button>
+          <a href="checkout.html" class="btn btn-primary d-block d-lg-none">
+            <i class="bi bi-cart"></i>
+            <p class="d-inline-block mb-0">0</p>
+          </a>
           <button
             class="navbar-toggler"
             type="button"
@@ -63,26 +64,39 @@
             </ul>
             <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
               <li class="nav-item ms-auto float-start">
-                <button class="btn btn-primary d-none d-lg-block">
-                  <i class="bi bi-cart"></i><strong> 10</strong>
-                </button>
+                <a
+                  href="checkout.html"
+                  type="button"
+                  class="btn btn-primary d-none d-lg-block"
+                >
+                  <i class="bi bi-cart"></i>
+                  <p class="d-inline-block mb-0">0</p>
+                </a>
               </li>
             </ul>
           </div>
         </div>
       </nav>
       <div
-        class="pt-5 text-center bg-image"
+        class="p-5 text-center bg-image"
         style="
-          background-image: url('/images/carousel3-dark.jpg');
-          height: 400px;
+          background-image: url('/images/carousel3.jpg');
           background-size: cover;
         "
       >
-        <img src="images/brod-white.svg" style="width: 400px" />
-        <!---<h1 class="mb-5 text-white display-1">vi är <mark>BRÖD</mark></h1> --->
-        <p class="mb-4 text-white lead">Vi bakar, du njuter</p>
-        <a data-mdb-ripple-init class="btn btn-primary" href="" role="button"
+        <h1 class="mb-2 text-white display-1">Moderna bakverk</h1>
+        <h3 class="mb-4 text-white display-3">med mycket kärlek</h3>
+        <p class="mb-4 text-white lead">
+          <mark
+            >Vi introducerar vår nya webbshop. Handla godsaker direkt
+            online.</mark
+          >
+        </p>
+        <a
+          data-mdb-ripple-init
+          class="btn btn-primary btn-lg"
+          href="butik.html"
+          role="button"
           >Handla</a
         >
       </div>
@@ -109,7 +123,7 @@
       <div class="container">
         <div class="row align-items-center">
           <div class="col-md-7">
-            <h3 class="display-3">Vi kan bröd</h3>
+            <h2 class="display-2">Vi kan bröd</h2>
             <p>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero,
               quia ipsum reiciendis itaque facere dignissimos deserunt, eos
@@ -122,7 +136,7 @@
             <img src="images/boximg1.jpg" />
           </div>
           <div class="col-md-7 order-md-2">
-            <h3 class="display-3">Om oss</h3>
+            <h2 class="display-2">Om oss</h2>
             <p>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui ut
               doloremque dolorem exercitationem eius nulla velit inventore

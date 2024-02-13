@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Pacifico&family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&display=swap");
+
 .btn-primary {
   background-color: #fff3cd;
   color: black;
@@ -8,6 +10,32 @@
   color: white;
   border-color: #fff3cd;
 }
+.btn-primary:not(:disabled):not(.disabled):active {
+  background-color: #8a7223;
+  color: white;
+  border-color: #fff3cd;
+}
 #navbar {
   background-color: #8f764b;
+}
+.display-1 {
+  font-family: "Red Hat Display", sans-serif;
+  font-weight: 900;
+  text-shadow: 2px 2px 4px #443811;
+}
+.display-2 {
+  font-family: "Red Hat Display", sans-serif;
+  font-weight: 700;
+  font-optical-sizing: auto;
+}
+.display-3 {
+  font-family: "Pacifico", cursive;
+  font-weight: 400;
+  font-style: normal;
+  text-shadow: 2px 2px 4px #443811;
+}
+.lead {
+  font-family: "Red Hat Display", sans-serif;
+  font-weight: 600;
+  font-optical-sizing: auto;
 }
