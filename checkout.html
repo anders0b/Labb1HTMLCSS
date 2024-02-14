@@ -23,7 +23,7 @@
     ></script>
     <script defer src="script.js"></script>
   </head>
-  <body onload="displayCheckOut()">
+  <body onload="displayCheckOut(), totalSum();">
     <header>
       <nav
         id="navbar"
@@ -87,9 +87,33 @@
       <div class="container-flex mt-3"></div>
       <div class="container-sm">
         <div class="row row-cols-1">
+          <h2>Kassa</h2>
           <div id="checkout" class="list-group"></div>
         </div>
+        <h3 class="mt-2">Totalsumma</h3>
+        <h4 id="total" class="mb-5"></h4>
       </div>
     </main>
+    <footer class="bg-dark footer">
+      <div class="container-xl">
+        <div class="row">
+          <div class="col-sm mb-5 mt-5 align-self-center">
+            <img src="/images/brod-white.svg" style="width: 200px" />
+          </div>
+          <div class="col-sm mb-5 mt-5 align-self-center">
+            <h4 class="text-white">Länkar</h4>
+            <div class="list-group-dark list-group-flush text-white">
+              <a href="#" class="list-group-item">Hem</a>
+              <a href="#" class="list-group-item">Butik</a>
+              <a href="#" class="list-group-item">Om oss</a>
+            </div>
+          </div>
+          <div class="col-sm mb-5 mt-5 align-self-center">
+            <h4 class="text-white">BRÖD AB</h4>
+            <p class="text-white">Anders Öberg<br />Testvägen 13</p>
+          </div>
+        </div>
+      </div>
+    </footer>
   </body>
 </html>

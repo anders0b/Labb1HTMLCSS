@@ -39,3 +39,11 @@
   font-weight: 600;
   font-optical-sizing: auto;
 }
+@media (min-width: 979px) {
+  .footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    z-index: 100;
+  }
+}

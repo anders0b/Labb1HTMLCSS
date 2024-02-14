@@ -57,7 +57,7 @@ const inventory = [
   ),
 ];
 
-const shoppingCart = [];
+let shoppingCart = [];
 
 const inventoryList = document.querySelector("#inventory");
 
@@ -115,47 +115,64 @@ function displayInventory() {
 const checkOutList = document.querySelector("#checkout");
 
 function displayCheckOut() {
-  const cartGroup = Object.groupBy(shoppingCart, s => s.name)
-  for (const item of Object.entries(cartGroup)) {
-    const listGroupItem = document.createElement("a");
-    const dFlex = document.createElement("div");
-    const listItemHeading = document.createElement("h5");
-    const trashBtn = document.createElement("button");
-    const trashIcon = document.createElement("i");
-    const priceText = document.createElement("p");
-    const amountText = document.createElement("p");
-
-    listItemHeading.innerText = item[0];
-    priceText.innerText = `${item[1].reduce((n, {price}) => n + price, 0)} kr`;
-    amountText.innerText = `${item[1].length} stycken`;
-
-    trashBtn.onclick = () => {
-      removeFromCart(listItemHeading);
-      priceText.innerText = `${item[1].reduce((n, {price}) => n + price, 0)} kr`;
-      amountText.innerText = `${item[1].length} stycken`;
-      if(item[1].length === 0){
-        checkOutList.removeChild(listGroupItem);
-      }
+  let cartGroup = Object.groupBy(shoppingCart, (s) => s.name);
+  console.log(cartGroup);
+  if (shoppingCart.length > 0) {
+    for (const item of Object.entries(cartGroup)) {
       console.log(item);
+      const listGroupItem = document.createElement("a");
+      const dFlex = document.createElement("div");
+      const listItemHeading = document.createElement("h5");
+      const trashBtn = document.createElement("button");
+      const trashIcon = document.createElement("i");
+      const priceText = document.createElement("p");
+      const amountText = document.createElement("p");
+
+      listItemHeading.innerText = item[0];
+      priceText.innerText = `${item[1].reduce(
+        (n, { price }) => n + price,
+        0
+      )} kr`;
+      amountText.innerText = `${item[1].length} stycken`;
+
+      trashBtn.onclick = () => {
+        removeFromCart(listItemHeading);
+        const product = item[1].find(
+          (x) => x.name === listItemHeading.innerText
+        );
+        item[1].pop(product);
+        priceText.innerText = `${item[1].reduce(
+          (n, { price }) => n + price,
+          0
+        )} kr`;
+        amountText.innerText = `${item[1].length} stycken`;
+        if (item[1].length === 0) {
+          checkOutList.removeChild(listGroupItem);
+        }
+      };
+
+      checkOutList.appendChild(listGroupItem);
+      listGroupItem.appendChild(dFlex);
+      dFlex.appendChild(listItemHeading);
+      dFlex.appendChild(trashBtn);
+      trashBtn.appendChild(trashIcon);
+      listGroupItem.appendChild(priceText);
+      listGroupItem.appendChild(amountText);
+
+      checkOutStyle(
+        listGroupItem,
+        dFlex,
+        listItemHeading,
+        trashBtn,
+        trashIcon,
+        priceText,
+        amountText
+      );
     }
-
-    checkOutList.appendChild(listGroupItem);
-    listGroupItem.appendChild(dFlex);
-    dFlex.appendChild(listItemHeading);
-    dFlex.appendChild(trashBtn);
-    trashBtn.appendChild(trashIcon);
-    listGroupItem.appendChild(priceText);
-    listGroupItem.appendChild(amountText);
-
-    checkOutStyle(
-      listGroupItem,
-      dFlex,
-      listItemHeading,
-      trashBtn,
-      trashIcon,
-      priceText,
-      amountText
-    );
+  } else {
+    const h5 = document.createElement("h5");
+    checkOutList.appendChild(h5);
+    h5.innerText = "Här var det tomt, handla något!";
   }
 }
 
@@ -174,12 +191,23 @@ function addToCart(cardTitle) {
   const stringifiedCart = JSON.stringify(shoppingCart);
   localStorage.setItem("shoppingCart", stringifiedCart);
 }
-function removeFromCart(listItemHeading){
-  const product = shoppingCart.find((x) => x.name === listItemHeading.innerText);
-  shoppingCart.pop(product);
+function removeFromCart(listItemHeading) {
+  const product = shoppingCart.find(
+    (x) => x.name === listItemHeading.innerText
+  );
+  shoppingCart = shoppingCart.filter((item) => item !== product);
   cartAmount();
+  totalSum();
   const stringifiedCart = JSON.stringify(shoppingCart);
   localStorage.setItem("shoppingCart", stringifiedCart);
+}
+function totalSum() {
+  const sumText = document.getElementById("total");
+  let sum = 0;
+  for (item of shoppingCart) {
+    sum += item.price;
+  }
+  sumText.innerText = `${sum} kr`;
 }
 
 function cartAmount() {
