@@ -115,7 +115,9 @@ function displayInventory() {
 const checkOutList = document.querySelector("#checkout");
 
 function displayCheckOut() {
-  for (const item of shoppingCart) {
+  const cartGroup = Object.groupBy(shoppingCart, s => s.name)
+  console.log(cartGroup);
+  for (const item of cartGroup) {
     const listGroupItem = document.createElement("a");
     const dFlex = document.createElement("div");
     const listItemHeading = document.createElement("h5");
