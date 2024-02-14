@@ -116,8 +116,7 @@ const checkOutList = document.querySelector("#checkout");
 
 function displayCheckOut() {
   const cartGroup = Object.groupBy(shoppingCart, s => s.name)
-  console.log(cartGroup);
-  for (const item of cartGroup) {
+  for (const item of Object.entries(cartGroup)) {
     const listGroupItem = document.createElement("a");
     const dFlex = document.createElement("div");
     const listItemHeading = document.createElement("h5");
@@ -126,8 +125,19 @@ function displayCheckOut() {
     const priceText = document.createElement("p");
     const amountText = document.createElement("p");
 
-    listItemHeading.innerText = item.name;
-    priceText.innerText = `${item.price} kr`;
+    listItemHeading.innerText = item[0];
+    priceText.innerText = `${item[1].reduce((n, {price}) => n + price, 0)} kr`;
+    amountText.innerText = `${item[1].length} stycken`;
+
+    trashBtn.onclick = () => {
+      removeFromCart(listItemHeading);
+      priceText.innerText = `${item[1].reduce((n, {price}) => n + price, 0)} kr`;
+      amountText.innerText = `${item[1].length} stycken`;
+      if(item[1].length === 0){
+        checkOutList.removeChild(listGroupItem);
+      }
+      console.log(item);
+    }
 
     checkOutList.appendChild(listGroupItem);
     listGroupItem.appendChild(dFlex);
@@ -160,7 +170,13 @@ function readMoreModal(cardTitle) {
 function addToCart(cardTitle) {
   const product = inventory.find((x) => x.name === cardTitle.innerText);
   shoppingCart.push(product);
-  console.log(shoppingCart);
+  cartAmount();
+  const stringifiedCart = JSON.stringify(shoppingCart);
+  localStorage.setItem("shoppingCart", stringifiedCart);
+}
+function removeFromCart(listItemHeading){
+  const product = shoppingCart.find((x) => x.name === listItemHeading.innerText);
+  shoppingCart.pop(product);
   cartAmount();
   const stringifiedCart = JSON.stringify(shoppingCart);
   localStorage.setItem("shoppingCart", stringifiedCart);
@@ -170,7 +186,7 @@ function cartAmount() {
   const b = document.getElementById("navbar");
   const nodes = b.getElementsByTagName("p");
   for (node of nodes) {
-    node.innerText = shoppingCart.length;
+    node.innerText = `${shoppingCart.length} produkter`;
   }
 }
 function getCartFromLocal() {
