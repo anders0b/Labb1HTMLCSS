@@ -48,12 +48,20 @@ const inventory = [
     "Choklad, Mjöl, Mjölk, Ägg, Grädde"
   ),
   new Item(
-    4,
+    5,
     "Kanelbiscotti",
     49,
     "/product_images/kanelbiscotti.avif",
     "Dessa italienska mandelskorpor får här varmkryddig smak av kanel och ingefära.",
     "Smör, Mjöl, Bakpulver, Ägg, Vaniljsocker"
+  ),
+  new Item(
+    6,
+    "Gula dammsugare",
+    49,
+    "/product_images/gula-dammsugare.avif",
+    "Klassiska punschrullar med en twist. De här får smak av torkade aprikoser och vi väljer gul marsipan. ",
+    "Aprikos, Punsch, Smör, Kakao, Vaniljsocker"
   ),
 ];
 
@@ -149,6 +157,7 @@ function displayCheckOut() {
         if (item[1].length === 0) {
           checkOutList.removeChild(listGroupItem);
         }
+        cartEmpty();
       };
 
       checkOutList.appendChild(listGroupItem);
@@ -170,9 +179,17 @@ function displayCheckOut() {
       );
     }
   } else {
+    cartEmpty();
+  }
+}
+function cartEmpty() {
+  if (shoppingCart.length === 0) {
+    const emptyCartDiv = document.createElement("div");
     const h5 = document.createElement("h5");
-    checkOutList.appendChild(h5);
+    checkOutList.appendChild(emptyCartDiv);
+    emptyCartDiv.appendChild(h5);
     h5.innerText = "Här var det tomt, handla något!";
+    emptyCartDiv.classList.add("row", "row-cols-1", "m-2");
   }
 }
 
