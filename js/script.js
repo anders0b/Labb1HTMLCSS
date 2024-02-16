@@ -19,7 +19,7 @@ const inventory = [
     1,
     "Kardemummabulle",
     29,
-    "../product_images/kardemummabullar.avif",
+    "product_images/kardemummabullar.avif",
     "Underbart goda och saftiga bullar med kardemumma",
     "Mjöl, Kardemumma, Mjölk"
   ),
@@ -27,7 +27,7 @@ const inventory = [
     2,
     "Kanelbulle",
     25,
-    "../product_images/kanelbulle.avif",
+    "product_images/kanelbulle.avif",
     "Bjud på saftiga och hjärtformade kanelbullar på alla hjärtans dag.",
     "Mjöl, Kanel, Mjölk, Jäst"
   ),
@@ -35,7 +35,7 @@ const inventory = [
     3,
     "Semla med kardemumma",
     59,
-    "../product_images/semla.avif",
+    "product_images/semla.avif",
     "Klassiska släta bullar med smak av kardemumma, fylld med mandelmassa och vispad grädde.",
     "Mjöl, Kanel, Mjölk, Jäst"
   ),
@@ -43,7 +43,7 @@ const inventory = [
     4,
     "Chokladtryffeltårta",
     159,
-    "../product_images/chokladtryffel.avif",
+    "product_images/chokladtryffel.avif",
     "En makalöst god chokladtårta täckt med ett lager chokladtryffel - ett måste för alla chokladälskare.",
     "Choklad, Mjöl, Mjölk, Ägg, Grädde"
   ),
@@ -51,7 +51,7 @@ const inventory = [
     5,
     "Kanelbiscotti",
     49,
-    "../product_images/kanelbiscotti.avif",
+    "product_images/kanelbiscotti.avif",
     "Dessa italienska mandelskorpor får här varmkryddig smak av kanel och ingefära.",
     "Smör, Mjöl, Bakpulver, Ägg, Vaniljsocker"
   ),
@@ -59,7 +59,7 @@ const inventory = [
     6,
     "Gula dammsugare",
     49,
-    "../product_images/gula-dammsugare.avif",
+    "product_images/gula-dammsugare.avif",
     "Klassiska punschrullar med en twist. De här får smak av torkade aprikoser och vi väljer gul marsipan. ",
     "Aprikos, Punsch, Smör, Kakao, Vaniljsocker"
   ),
