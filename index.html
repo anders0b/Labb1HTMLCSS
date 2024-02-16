@@ -10,7 +10,7 @@
       integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
       crossorigin="anonymous"
     />
-    <link href="styles.css" rel="stylesheet" />
+    <link href="styles\styles.css" rel="stylesheet" />
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
@@ -21,8 +21,8 @@
       integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
       crossorigin="anonymous"
     ></script>
-    <script defer src="script.js"></script>
-    <script defer src="location-api.js"></script>
+    <script defer src="js\script.js"></script>
+    <script defer src="js\location-api.js"></script>
   </head>
   <body class="d-flex flex-column min-vh-100">
     <header>
@@ -79,6 +79,7 @@
         </div>
       </nav>
       <div
+        id="indexHeader"
         class="p-5 text-center bg-image"
         alt="header-image"
         style="
@@ -86,7 +87,7 @@
           background-size: cover;
         "
       >
-        <h1 class="mb-2 text-white display-1">Moderna bakverk</h1>
+        <h1 class="mb-1 text-white display-1">Moderna bakverk</h1>
         <h3 class="mb-4 text-white display-3">med mycket kärlek</h3>
         <a
           data-mdb-ripple-init
@@ -98,7 +99,7 @@
       </div>
     </header>
     <main>
-      <div class="mb-5"></div>
+      <div class="mb-3"></div>
       <div class="container">
         <div class="row">
           <div class="col-sm-12 mb-sm-0">
@@ -117,7 +118,6 @@
                   Köp alla dina bakverk direkt via nätet. Just nu fri
                   hemleverans på beställningar över 299 kr.
                 </p>
-                <a href="#" class="btn btn-primary">Onlinebutik</a>
               </div>
               <div class="card-footer text-body-secondary">
                 *Plats hämtad från Abstract API
@@ -138,7 +138,9 @@
               av det traditionella. Låt oss fresta dig, gå in i butiken och
               kika.
             </p>
-            <button type="button" class="btn btn-primary">Handla!</button>
+            <a href="butik.html" type="button" class="btn btn-primary"
+              >Handla!</a
+            >
           </div>
           <div class="col-md-5">
             <img
@@ -154,9 +156,9 @@
               älskar att äta. Vad mer behöver du veta? Okej, okej. Vi fattar. Gå
               in på den här sidan så kan du läsa vår historia.
             </p>
-            <button type="button" class="btn btn-primary">
+            <a href="om-oss.html" type="button" class="btn btn-primary">
               Klicka här om du är nyfiken
-            </button>
+            </a>
           </div>
           <div class="col-md-5 order-md-1">
             <img
@@ -168,7 +170,7 @@
         </div>
       </div>
     </main>
-    <footer class="bg-dark mt-auto">
+    <footer class="mt-auto">
       <div class="container-xl">
         <div class="row mb-3 mt-3">
           <div class="col align-self-center">
@@ -176,13 +178,19 @@
           </div>
           <div class="col align-self-center">
             <div class="list-group-dark list-group-flush text-white">
+              <p class="list-group-item mb-0"><strong>Länkar</strong></p>
               <a href="index.html" class="list-group-item">Hem</a>
               <a href="butik.html" class="list-group-item">Butik</a>
               <a href="om-oss.html" class="list-group-item">Om oss</a>
             </div>
           </div>
           <div class="col align-self-center">
-            <p class="text-white">Anders Öberg<br />Testvägen 13</p>
+            <div class="list-group-dark list-group-flush text-white">
+              <p class="list-group-item mb-0"><strong>Kontakt</strong></p>
+              <a class="list-group-item">Anders Öberg</a>
+              <a class="list-group-item">Testvägen 13</a>
+              <a class="list-group-item">031-1337 35</a>
+            </div>
           </div>
         </div>
       </div>

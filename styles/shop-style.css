@@ -1,0 +1,34 @@
+@keyframes popUp {
+  0% {
+    background-color: #dddad1;
+  }
+  50% {
+    background-color: white;
+  }
+  90% {
+    background-color: #dddad1;
+  }
+}
+
+#alertBar {
+  background-color: #dddad1;
+  animation-name: popUp;
+  animation-duration: 1s;
+  animation-iteration-count: 2;
+}
+.card {
+  border-color: #c0b282;
+}
+.alert-primary {
+  background-color: #dddad1;
+  border-color: #dddad1;
+  font-family: "Titillium Web", sans-serif;
+  font-weight: 600;
+  color: black;
+}
+main {
+  background-image: url("../images/boximg1.jpg");
+  background-repeat: no-repeat;
+  background-position-x: right;
+  background-position-y: bottom;
+}

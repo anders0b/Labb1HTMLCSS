@@ -75,6 +75,7 @@ function displayInventory() {
     const card = document.createElement("div");
     const img = document.createElement("img");
     img.setAttribute("src", item.img);
+    img.setAttribute("alt", item.name);
     const cardBody = document.createElement("div");
     const cardTitle = document.createElement("h5");
     const leadText = document.createElement("p");
@@ -132,6 +133,7 @@ function displayCheckOut() {
       const dFlex = document.createElement("div");
       const listItemHeading = document.createElement("h5");
       const trashBtn = document.createElement("button");
+      trashBtn.setAttribute("title", `Remove one ${item[0]}`);
       const trashIcon = document.createElement("i");
       const priceText = document.createElement("p");
       const amountText = document.createElement("p");
@@ -158,6 +160,9 @@ function displayCheckOut() {
           checkOutList.removeChild(listGroupItem);
         }
         cartEmpty();
+      };
+      checkOutBtn.onclick = () => {
+        checkOutModal();
       };
 
       checkOutList.appendChild(listGroupItem);
@@ -190,6 +195,7 @@ function cartEmpty() {
     emptyCartDiv.appendChild(h5);
     h5.innerText = "Här var det tomt, handla något!";
     emptyCartDiv.classList.add("row", "row-cols-1", "m-2");
+    checkOutBtn.classList.add("d-none");
   }
 }
 
@@ -199,6 +205,17 @@ function readMoreModal(cardTitle) {
   const product = inventory.find((x) => x.name === cardTitle.innerText);
   modalHeader.innerText = product.name;
   modalBody.innerText = `Ingredienser: ${product.ingredients}`;
+}
+function checkOutModal() {
+  const checkOutHeader = document.getElementById("checkOutModalLabel");
+  const checkOutCloseBtn = document.getElementById("closeModalBtn");
+  checkOutHeader.innerText = "Tack för din beställning";
+  checkOutCloseBtn.onclick = () => {
+    window.location.href = "index.html";
+    shoppingCart = [];
+    const stringifiedCart = JSON.stringify(shoppingCart);
+    localStorage.setItem("shoppingCart", stringifiedCart);
+  };
 }
 
 function addToCart(cardTitle) {
@@ -220,11 +237,13 @@ function removeFromCart(listItemHeading) {
 }
 function totalSum() {
   const sumText = document.getElementById("total");
+  const checkOutModalBody = document.getElementById("checkOutModalText");
   let sum = 0;
   for (item of shoppingCart) {
     sum += item.price;
   }
   sumText.innerText = `${sum} kr`;
+  checkOutModalBody.innerText = `Ditt totalbelopp blev ${sum} kr. Välkommen åter!`;
 }
 
 function cartAmount() {

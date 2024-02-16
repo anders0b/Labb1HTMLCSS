@@ -1,5 +1,25 @@
 @import url("https://fonts.googleapis.com/css2?family=Pacifico&family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap");
 
+@keyframes switchBG {
+  0% {
+    background-image: url("../images/carousel3.jpg");
+  }
+  33% {
+    background-image: url("../images/carousel2.jpg");
+  }
+  75% {
+    background-image: url("../images/carousel1.jpg");
+  }
+  100% {
+    background-image: url("../images/carousel3.jpg");
+  }
+}
+#indexHeader {
+  animation-name: switchBG;
+  animation-duration: 12s;
+  animation-iteration-count: infinite;
+}
+
 .btn-primary {
   background-color: #fff3cd;
   color: black;
@@ -47,22 +67,24 @@
   font-weight: 600;
   font-optical-sizing: auto;
 }
-@media (min-width: 979px) {
-  .footer {
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    z-index: 100;
-  }
-}
 .nav-link {
   font-family: "Titillium Web", sans-serif;
   font-weight: 400;
+  color: white;
+  text-shadow: 2px 2px 4px #443811;
 }
-.alert-primary {
-  background-color: #dddad1;
-  border-color: #dddad1;
-  font-family: "Titillium Web", sans-serif;
+.navbar-nav .nav-link.active,
+.navbar-nav .nav-link.show {
   font-weight: 600;
+  padding-right: 0.5rem;
+  padding-left: 0.5rem;
+}
+footer {
+  background-color: #5f4f33;
+}
+.card-footer {
+  background-color: #fdf5db;
+}
+.navbar-brand:hover {
   color: black;
 }

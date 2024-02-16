@@ -1,0 +1,10 @@
+body {
+  background-image: url("../images/boximg2.jpg");
+  background-repeat: no-repeat;
+  background-position-x: right;
+  background-position-y: bottom;
+}
+.container-sm {
+  background-color: white;
+  box-shadow: 2px 2px 10px #6d5a1b;
+}
