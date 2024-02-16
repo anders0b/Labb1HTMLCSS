@@ -76,8 +76,6 @@
 .navbar-nav .nav-link.active,
 .navbar-nav .nav-link.show {
   font-weight: 600;
-  padding-right: 0.5rem;
-  padding-left: 0.5rem;
 }
 footer {
   background-color: #5f4f33;
