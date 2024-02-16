@@ -86,3 +86,11 @@ footer {
 .navbar-brand:hover {
   color: black;
 }
+::selection {
+  color: white;
+  background: #443811;
+}
+::-moz-selection {
+  color: white;
+  background: #443811;
+}
