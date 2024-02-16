@@ -8,6 +8,7 @@ class Item {
     this.ingredients = ingredients;
   }
 }
+let shoppingCart = [];
 
 document.addEventListener("DOMContentLoaded", function () {
   getCartFromLocal();
@@ -28,7 +29,7 @@ const inventory = [
     "Kanelbulle",
     25,
     "product_images/kanelbulle.avif",
-    "Bjud på saftiga och hjärtformade kanelbullar på alla hjärtans dag.",
+    "Våra finfina kanelbullar, med en twist. Kolla formen!",
     "Mjöl, Kanel, Mjölk, Jäst"
   ),
   new Item(
@@ -50,7 +51,7 @@ const inventory = [
   new Item(
     5,
     "Kanelbiscotti",
-    49,
+    15,
     "product_images/kanelbiscotti.avif",
     "Dessa italienska mandelskorpor får här varmkryddig smak av kanel och ingefära.",
     "Smör, Mjöl, Bakpulver, Ägg, Vaniljsocker"
@@ -58,14 +59,20 @@ const inventory = [
   new Item(
     6,
     "Gula dammsugare",
-    49,
+    25,
     "product_images/gula-dammsugare.avif",
-    "Klassiska punschrullar med en twist. De här får smak av torkade aprikoser och vi väljer gul marsipan. ",
+    "Klassiska punschrullar med en twist. De här får smak av torkade aprikoser och vi väljer gul marsipan.",
     "Aprikos, Punsch, Smör, Kakao, Vaniljsocker"
   ),
+  new Item(
+    7,
+    "Chokladbollar",
+    11,
+    "product_images/chokladbollar.avif",
+    "Ihopvispade chokladbollar med en touch av havsalt. Kan det blir godare?",
+    "Smör, Kokos, Kakao, Kaffe, Vaniljsocker, Havregryn"
+  ),
 ];
-
-let shoppingCart = [];
 
 const inventoryList = document.querySelector("#inventory");
 
@@ -125,10 +132,8 @@ const checkOutList = document.querySelector("#checkout");
 
 function displayCheckOut() {
   let cartGroup = Object.groupBy(shoppingCart, (s) => s.name);
-  console.log(cartGroup);
   if (shoppingCart.length > 0) {
     for (const item of Object.entries(cartGroup)) {
-      console.log(item);
       const listGroupItem = document.createElement("a");
       const dFlex = document.createElement("div");
       const listItemHeading = document.createElement("h5");
@@ -255,9 +260,11 @@ function cartAmount() {
 }
 function getCartFromLocal() {
   const stringifiedCart = localStorage.getItem("shoppingCart");
-  const cartParse = JSON.parse(stringifiedCart);
-  for (item of cartParse) {
-    shoppingCart.push(item);
+  if (stringifiedCart !== null) {
+    const cartParse = JSON.parse(stringifiedCart);
+    for (item of cartParse) {
+      shoppingCart.push(item);
+    }
   }
 }
 
