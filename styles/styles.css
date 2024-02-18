@@ -19,6 +19,9 @@
   animation-duration: 12s;
   animation-iteration-count: infinite;
 }
+.mHeader {
+  background-color: #8f764b;
+}
 
 .btn-primary {
   background-color: #fff3cd;
@@ -79,6 +82,7 @@
 }
 footer {
   background-color: #5f4f33;
+  max-height: 112px;
 }
 .card-footer {
   background-color: #fdf5db;

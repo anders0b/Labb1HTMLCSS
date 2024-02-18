@@ -122,6 +122,7 @@ function displayInventory() {
       cardBody,
       cardTitle,
       leadText,
+      cardText,
       addToCartBtn,
       readMoreBtn
     );
@@ -195,10 +196,10 @@ function displayCheckOut() {
 function cartEmpty() {
   if (shoppingCart.length === 0) {
     const emptyCartDiv = document.createElement("div");
-    const h5 = document.createElement("h5");
+    const p = document.createElement("p");
     checkOutList.appendChild(emptyCartDiv);
-    emptyCartDiv.appendChild(h5);
-    h5.innerText = "Här var det tomt, handla något!";
+    emptyCartDiv.appendChild(p);
+    p.innerText = "Här var det tomt, handla något!";
     emptyCartDiv.classList.add("row", "row-cols-1", "m-2");
     checkOutBtn.classList.add("d-none");
   }
@@ -207,9 +208,16 @@ function cartEmpty() {
 function readMoreModal(cardTitle) {
   const modalHeader = document.getElementById("productModalLabel");
   const modalBody = document.getElementById("productModalText");
+  const modalBodyDesc = document.getElementById("productModalDesc");
+  const imgModal = document.getElementById("modalImg");
   const product = inventory.find((x) => x.name === cardTitle.innerText);
+  imgModal.setAttribute("src", product.img);
+  imgModal.setAttribute("alt", product.name);
+  imgModal.classList.add("d-md-none");
+  modalBodyDesc.classList.add("d-md-none");
   modalHeader.innerText = product.name;
   modalBody.innerText = `Ingredienser: ${product.ingredients}`;
+  modalBodyDesc.innerText = product.description;
 }
 function checkOutModal() {
   const checkOutHeader = document.getElementById("checkOutModalLabel");
@@ -275,15 +283,17 @@ function inventoryStyle(
   cardBody,
   cardTitle,
   leadText,
+  cardText,
   addToCartBtn,
   readMoreBtn
 ) {
   col.classList.add("col");
   card.classList.add("card", "mt-2");
-  img.classList.add("img-fluid");
+  img.classList.add("card-img-top", "d-none", "d-md-block");
   cardBody.classList.add("card-body");
   cardTitle.classList.add("card-title");
   leadText.classList.add("lead");
+  cardText.classList.add("d-md-block", "d-none");
   addToCartBtn.classList.add("btn", "btn-primary");
   readMoreBtn.classList.add("btn", "btn-secondary", "m-2");
 }

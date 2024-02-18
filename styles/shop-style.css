@@ -26,9 +26,3 @@
   font-weight: 600;
   color: black;
 }
-main {
-  background-image: url("../images/boximg1.jpg");
-  background-repeat: no-repeat;
-  background-position-x: right;
-  background-position-y: bottom;
-}
